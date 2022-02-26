@@ -1,2 +1,2 @@
 # Programming-In-Python
-20CS02 Python PIP Practicals
+This repositary contains practicals done for subject PIP
