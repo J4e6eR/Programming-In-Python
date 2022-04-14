@@ -1,0 +1,16 @@
+#ID & Name   : 20CS021 Mitren Kadiwala
+#Aim         : Generate PDF file of your 3rd Semester Mark-sheet
+#link(Github): https://github.com/Ashy09/python-Assignment/blob/main/Practical-10
+
+from pathlib import Path
+from PyPDF2 import PdfFileReader, PdfFileWriter
+pdf = PdfFileReader(str("20CS021 3rd sem.pdf"))
+pdf_writer = PdfFileWriter()
+
+print(pdf.getNumPages())
+for page in pdf.pages:
+    print(page.extractText())
+    pdf_writer.addPage(page)
+
+with Path("Result.pdf").open("wb") as output:
+    pdf_writer.write(output)
